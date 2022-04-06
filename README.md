@@ -22,3 +22,7 @@ Repository for the project of Machine Learning and Deep Learning on NAS algorith
 - NATS BENCH: [repo here](https://github.com/D-X-Y/NATS-Bench)
 - NAS Without Training: [repo here](https://github.com/BayesWatch/nas-without-training)
 
+# Authors
+- [Michele Presti](https://github.com/MichelePresti)
+- Francesca Cossu
+- Niccolò Dimonte
