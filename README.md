@@ -5,7 +5,7 @@ Repository for the project of Machine Learning and Deep Learning on NAS algorith
 ## TODO
 - Read paper and the link related to it.
 - Share documents about the argument in the doc folder
-- Starting to develop something :)
+- Starting to develop something
 
 # Development Guide
 ## GitHub Repository Guide
