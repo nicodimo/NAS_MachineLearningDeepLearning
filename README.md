@@ -21,7 +21,7 @@ Repository for the project of Machine Learning and Deep Learning on NAS algorith
 - Upload Colab code on GitHub: [Guide](https://bebi103a.github.io/lessons/02/git_with_colab.html#:~:text=After%20you%20have%20made%20changes,be%20pushed%20to%20your%20repository.)
 - NATS BENCH: [repo here](https://github.com/D-X-Y/NATS-Bench)
 - NAS Without Training: [repo here](https://github.com/BayesWatch/nas-without-training)
-
+- NAS Without Training Document: [here](doc/NASWithoutTraining.pdf)
 # Authors
 - [Michele Presti](https://github.com/MichelePresti)
 - Francesca Cossu
