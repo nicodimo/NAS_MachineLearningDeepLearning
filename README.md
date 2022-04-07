@@ -17,7 +17,7 @@ Repository for the project of Machine Learning and Deep Learning on NAS algorith
 - Keep tracking of algorithm running time
 
 # Useful Links
-- Paper group 8: [Neural Architecture Search](doc/paper.pdf)
+- Paper group 8: [Neural Architecture Search](doc/Project8) Training Free Neural Architecture Search.pdf)
 - Upload Colab code on GitHub: [Guide](https://bebi103a.github.io/lessons/02/git_with_colab.html#:~:text=After%20you%20have%20made%20changes,be%20pushed%20to%20your%20repository.)
 - NATS BENCH: [repo here](https://github.com/D-X-Y/NATS-Bench)
 - NAS Without Training: [repo here](https://github.com/BayesWatch/nas-without-training)
