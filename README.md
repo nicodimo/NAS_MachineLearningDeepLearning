@@ -22,6 +22,8 @@ Repository for the project of Machine Learning and Deep Learning on NAS algorith
 - NATS BENCH: [repo here](https://github.com/D-X-Y/NATS-Bench)
 - NAS Without Training: [repo here](https://github.com/BayesWatch/nas-without-training)
 - NAS Without Training Document: [here](doc/NASWithoutTraining.pdf)
+- [The definitive guide to NAS](https://www.kdnuggets.com/2019/10/using-neural-networks-design-neural-networks-definitive-guide-understand-neural-architecture-search.html)
+- [KDNuggets Guide](https://www.kdnuggets.com/2019/10/research-guide-neural-architecture-search.html)
 # Authors
 - [Michele Presti](https://github.com/MichelePresti)
 - Francesca Cossu
