@@ -24,6 +24,7 @@ Repository for the project of Machine Learning and Deep Learning on NAS algorith
 - NAS Without Training Document: [here](doc/NASWithoutTraining.pdf)
 - [The definitive guide to NAS](https://www.kdnuggets.com/2019/10/using-neural-networks-design-neural-networks-definitive-guide-understand-neural-architecture-search.html)
 - [KDNuggets Guide](https://www.kdnuggets.com/2019/10/research-guide-neural-architecture-search.html)
+- [Colab Code](https://colab.research.google.com/drive/1At6oinBpr_ok-8cOu8zHbsAlad8LPL2k?usp=sharing#scrollTo=GSfgib9FkgMu)
 # Authors
 - [Michele Presti](https://github.com/MichelePresti)
 - Francesca Cossu
