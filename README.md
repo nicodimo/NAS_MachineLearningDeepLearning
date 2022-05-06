@@ -29,3 +29,7 @@ Repository for the project of Machine Learning and Deep Learning on NAS algorith
 - [Michele Presti](https://github.com/MichelePresti)
 - Francesca Cossu
 - Niccolò Dimonte
+
+# Contributing
+- AutoML-NASLib Code [repo here](https://github.com/automl/NASLib)
+- NASBench201 [repo here](https://github.com/D-X-Y/NAS-Bench-201)
