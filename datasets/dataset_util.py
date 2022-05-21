@@ -122,7 +122,7 @@ def get_datasets(name, root, cutout):
         raise TypeError("Unknow dataset : {:}".format(name))
 
     if name == 'cifar10':
-        train_data = dset.CIFAR10(root, train=True, transform=train_transform, download=False)
+        train_data = dset.CIFAR10(root, train=True, transform=train_transform, download=True)
         test_data = dset.CIFAR10(root, train=False, transform=test_transform, download=True)
         assert len(train_data) == 50000 and len(test_data) == 10000
     elif name == 'cifar100':
