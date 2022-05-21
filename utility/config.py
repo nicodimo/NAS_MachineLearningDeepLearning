@@ -36,8 +36,8 @@ def load_config(path='files/config.txt', verbose=True):
     assert os.path.exists(path), 'Can not find {:}'.format(path)
     with open(path, 'r') as f:
         data = json.load(f)
-    content = {k: convert_param(v) for k, v in data.items()}
-    if verbose:
-        print('{:}'.format(content))
-    return content
+    # content = {k: convert_param(v) for k, v in data.items()}
+    # if verbose:
+        # print('{:}'.format(content))
+    return data
 

@@ -1,4 +1,5 @@
 # NAS WOT Algorithm
+from typing import Dict, Union
 
 import numpy as np
 import torch
@@ -10,6 +11,19 @@ from score.score import ScoreAgent as Score
 
 # PARSING ARGUMENT
 
+config = {}
+config['data_loc'] = 'C:/Users/Michele/Desktop/FilePersonali/NAS_MachineLearningDeepLearning/files'
+config['api_loc'] = 'C:/Users/Michele/Downloads/NAS-Bench-201-v1_1-096897.pth'
+config['score'] = 'hook_logdet'
+config['nasspace'] = 'nasbench201'
+config['augtype'] = 'none'
+config['dataset'] = 'cifar10'
+config['maxofn'] = 3
+config['batch_size'] = 128
+config['seed'] = 1
+config['dataset'] = 'cifar10'
+
+"""
 parser = argparse.ArgumentParser(description='NAS Without Training')
 parser.add_argument('--data_loc', default='../cifardata/', type=str, help='dataset folder')
 parser.add_argument('--api_loc', default='../NAS-Bench-201-v1_0-e61699.pth',
@@ -38,15 +52,13 @@ parser.add_argument('--num_modules_per_stack', default=3, type=int, help='#modul
 parser.add_argument('--num_labels', default=1, type=int, help='#classes (nasbench101)')
 
 args = parser.parse_args()
-
+"""
 #######################
 
 # LOADING SEARCH SPACE ########
-
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-dataset = 'cifar10'
 
-searchspace = NasBench201(args.api_loc)
+searchspace = NasBench201(config['api_loc'])
 
 ################################
 
@@ -54,13 +66,14 @@ searchspace = NasBench201(args.api_loc)
 
 """ Modules for data loading can be found in datasets package"""
 
-train_dt = data.load_dataset(dataset)
+train_dt = data.load_dataset(config['dataset'], config['augtype'], config['batch_size'], config['data_loc'])
 
 ################################
 
 # SCORE INITIALIZING ##############
 
-score = Score(searchspace)
+score = Score(searchspace, config['score'])
+accs = np.zeros(len(searchspace))
 
 ################################
 
@@ -70,7 +83,7 @@ for i, (uid, network) in enumerate(searchspace):
     try:
 
         # Add Hook to modules in the current network
-        if 'hook_' in args.score:
+        if 'hook_' in config['score']:
 
             def counting_forward_hook(module_hook, inp, out):
                 try:
@@ -97,26 +110,38 @@ for i, (uid, network) in enumerate(searchspace):
 
         # Starting score algorithm
         network = network.to(device)
-        random.seed(args.seed)
-        np.random.seed(args.seed)
-        torch.manual_seed(args.seed)
+        random.seed(config['seed'])
+        np.random.seed(config['seed'])
+        torch.manual_seed(config['seed'])
         s = []
-        for j in range(args.maxofn):
+        for j in range(config['maxofn']):
             data_iterator = iter(train_dt)
             x, target = next(data_iterator)
             x2 = torch.clone(x)
             x2 = x2.to(device)
             x, target = x.to(device), target.to(device)
             print(x, target)
-            # jacobs, labels, y, out = get_batch_jacobian(network, x, target, device, args)
-            if 'hook_' in args.score:
+            jacobs, labels, y, out = score.get_jacobian(network, x, target, device, config)
+            if 'hook_' in config['score']:
                 network(x2.to(device))
-                s.append(score.get_score_func(args.score)(network.K, target))
+                s.append(score.get_score(network.K, target))
             else:
                 pass
-                # s.append(score.get_score_func(args.score)(jacobs, labels))
+                s.append(score.get_score(config['score'])(jacobs, labels))
 
         score.register_score(s, i)
+        scores = score.search_score(i)
+        accs[i] = searchspace.get_final_accuracy(uid, acc_type, args.trainval)  # type: ignore
+        accs_ = accs[~np.isnan(scores)]
+        scores_ = scores[~np.isnan(scores)]
+        numnan = np.isnan(scores).sum()
+        # tau, p = stats.kendalltau(accs_[:max(i - numnan, 1)], scores_[:max(i - numnan, 1)])
+        # print(f'{tau}')
+        filename = ''
+        accfilename = ''
+        if i % 1000 == 0:
+            np.save(filename, scores)
+            np.save(accfilename, accs)
         """ Check other score in original file and add """
 
     except Exception as e:
