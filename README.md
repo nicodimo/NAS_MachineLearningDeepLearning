@@ -2,11 +2,6 @@
 Repository for the project of Machine Learning and Deep Learning on NAS algorithm
 
 # Project Step
-## TODO
-- Read paper and the link related to it.
-- Share documents about the argument in the doc folder
-- Starting to develop something
-
 # Development Guide
 ### GitHub Repository Guide
 - Download [GitHub Desktop](https://desktop.github.com/) if you don't already have it
