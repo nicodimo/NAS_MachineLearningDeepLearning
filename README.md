@@ -33,6 +33,21 @@ a global average pooling layer.
 ### Datasets
 ---
 
+In this project we use CIFAR-10, CIFAR-100 (Krizhevsky
+et al., 2009) and ImageNet-16-120 (Chrabaszcz et al., 2017).
+
+- CIFAR-10 It is a standard image classification dataset and
+consists of 60K 32×32 colour images equally divided in
+10 classes.
+
+- CIFAR-100 This dataset is just like CIFAR-10. It has the
+same images as CIFAR-10 but categorizes each image
+into 100 fine-grained classes.
+- ImageNet-16-120 is built from the down-sampled variant
+of ImageNet (ImageNet16×16). ImageNet-16-120 con-
+tains 151.7K training images, 3K validation images, and
+3K test images with 120 classes.
+
 ### Metrics
 ---
 
