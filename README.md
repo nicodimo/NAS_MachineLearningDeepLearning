@@ -53,14 +53,7 @@ tains 151.7K training images, 3K validation images, and
 
 ### Results
 ---
-# Development Guide
-### GitHub Repository Guide
-- Download [GitHub Desktop](https://desktop.github.com/) if you don't already have it
-- Fork the code and save it on your local branch
-- Start to code and then commit your changes
-### Project Development Guide
-- Using [Colab](https://colab.research.google.com/) to develop your code
-- Keep tracking of algorithm running time
+
 
 # Useful Links
 - Paper group 8: [Neural Architecture Search](doc/Project8.pdf)
