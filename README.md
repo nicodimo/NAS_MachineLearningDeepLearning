@@ -1,7 +1,43 @@
 # NAS MachineLearningDeepLearning
 Repository for the project of Machine Learning and Deep Learning on NAS algorithm
 
-# Project Step
+# Summary
+
+### Introduction
+---
+One of the most difficult aspects of Neural Networks
+is developing their structure. Hand-design requires a large
+number of human resources and for this reason NAS algorithms
+have been created to automate this process. These methods are
+extremely slow, requiring a full training for each observed model.
+To expedite this process, various quick-to-compute measures can
+be used instead of training to evaluate networks. In this paper, we
+evaluate two of these metrics (NASWOT and Synflow) and test
+several search algorithms in order to determine the optimum
+network configuration for image classification of three distinct
+datasets using the Nats-Bench in a matter of minutes.
+
+### Searchspace
+---
+In our experiments, we explored the NATS-bench search
+space. The skeleton is initiated with one 3x3
+convolution with 16 output channels and a batch normalization
+layer. The main body of the skeleton includes three stacks of
+cells connected by a residual block. The shortcut path in this
+residual block consists of a 2x2 average pooling layer with a
+stride of 2 and a 1x1 convolution. The skeleton ends up with
+a global average pooling layer.
+
+![SearchSpaceStructure](doc/SearchSpaceStructure.png)
+
+### Datasets
+---
+
+### Metrics
+---
+
+### Results
+---
 # Development Guide
 ### GitHub Repository Guide
 - Download [GitHub Desktop](https://desktop.github.com/) if you don't already have it
