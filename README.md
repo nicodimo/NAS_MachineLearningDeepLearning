@@ -67,7 +67,7 @@ tains 151.7K training images, 3K validation images, and
 # Authors
 - [Michele Presti](https://github.com/MichelePresti)
 - Francesca Cossu
-- Niccolò Dimonte
+- [Niccolò Dimonte](https://github.com/nicodimo)
 
 # Contributing
 - AutoML-NASLib Code [repo here](https://github.com/automl/NASLib)
